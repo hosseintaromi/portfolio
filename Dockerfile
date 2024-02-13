@@ -9,5 +9,4 @@ RUN yarn global add serve
 ENV NODE_ENV production
 ENV NEXT_SHARP_PATH=/app/node_modules/sharp
 COPY public ./public
-EXPOSE 3000
 CMD ["npm", "run", "preview"]
