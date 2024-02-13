@@ -4,10 +4,10 @@ COPY package*.json ./
 RUN yarn global add server
 RUN yarn install
 COPY . .
-RUN yarn run build --verbose
+RUN yarn run build
 RUN yarn global add serve
 ENV NODE_ENV production
 ENV NEXT_SHARP_PATH=/app/node_modules/sharp
 COPY public ./public
 EXPOSE 3000
-CMD ["serve", "-s", "build"]
+CMD ["npm", "run", "preview"]
